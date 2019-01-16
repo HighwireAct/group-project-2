@@ -1,5 +1,10 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS quiz_seq_db;
+CREATE DATABASE quiz_db;
+USE quiz_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+SELECT *FROM Questions;
+SELECT *FROM Topics;
+SELECT *FROM Tests;
+
+
+SELECT *FROM Questions INNER JOIN Tests ON Questions.TestId = Tests.id   JOIN Topics ON Tests.TopicId = Topics.id;
