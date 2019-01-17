@@ -3,6 +3,7 @@ var express = require("express");
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
+var controller = require("./controllers/controller.js");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -11,6 +12,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+//app.use(routes);
 
 // Handlebars
 app.engine(
@@ -22,8 +24,9 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+//require("./routes/apiRoutes")(app);
+//require("./routes/htmlRoutes")(app);
+//app.use(controller)
 
 var syncOptions = { force: false };
 
@@ -32,6 +35,31 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
+console.log();
+
+app.get("/createTopic", function(req, res) {
+  controller.createTopic(controller.topicExample, res);
+});
+
+app.get("/createTest", function(req, res) {
+  controller.createTest(controller.testExample, res);
+});
+
+app.get("/createQuestion", function(req, res) {
+  controller.createQuestion(controller.questionExample, res);
+});
+
+app.get("/getTopicsList", function(req, res) {
+  controller.getTopicsList(req, res);
+});
+
+app.get("/getTestsList", function(req, res) {
+  controller.getTestsList(req, res);
+});
+
+app.get("/findQuestionsWithTestId/:testid", function(req, res) {
+  controller.findQuestionsWithTestId(req, res, req.params.testid);
+});
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
