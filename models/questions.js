@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     answer2: DataTypes.TEXT,
     answer3: DataTypes.TEXT,
     answer4: DataTypes.TEXT,
-    correctAnswer: DataTypes.INTEGER
+    correctAnswer: DataTypes.TEXT
   });
 
   Question.associate = function(models) {
