@@ -1,0 +1,107 @@
+body {
+    background-color: pink;
+  }
+  
+.game-title {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 2%;
+    color: turquoise;
+    background-color: white;
+    padding: 2%;
+}
+
+h2,
+p {
+  color: white;
+}
+
+hr {
+  border-top: 5px dotted white;
+}
+#notes {
+  width: 40%;
+}
+
+#start-button {
+    background-color: turquoise;
+    border-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#start-button:hover {
+    background-color: rgb(50, 197, 182);
+}
+
+#start-page {
+  align-content: center;
+}
+  
+  #end-page {
+    display: none;
+  }
+  
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+  }
+  
+  #end-page p {
+    font-size: 20px;
+  }
+  
+  #correct-answers {
+    margin-top: 32px;
+    color: yellowgreen;
+  }
+
+  #incorrect-answers {
+      color: red;
+  }
+  
+  #unanswered {
+      color: yellow;
+  }
+
+  #question {
+    margin-top: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(236, 103, 125);
+  }
+  
+  
+  #time-left {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+  }
+  
+  #submit-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: turquoise;
+    border-color: white;
+  }
+
+  #submit-button:hover {
+      background-color: rgb(50, 197, 182);
+  }
+
+  #report-card {
+    font-family: 'Press Start 2P', cursive;
+    color: white; 
+  }
+
+  #report-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
+  }
+
+#side-image {
+  width: 75%;
+  margin-bottom: 5%;
+}

@@ -1,3 +1,42 @@
+@import url("quiz.css");
+
 .list-group-item {
   line-height: 2.5;
 }
+
+.container {
+  margin-top: 30px;
+}
+
+#appName {
+  color: darkblue;
+  font-size: 8em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 1%;
+}
+
+#tagline {
+  color: lightcoral;
+  font-size: 1.5em;
+  font-family: 'Sarabun', sans-serif;
+  text-align: center
+}
+
+#takeQuizBtn {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#makeQuizBtn {
+  width: 100%;
+}
+
+
+
+#takeQuiz {
+  color: blue;
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif 
+}
+
