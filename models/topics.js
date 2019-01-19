@@ -6,6 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     Topic.hasMany(models.Test, {
       onDelete: "cascade"
     });
+    Topic.belongsTo(models.Subject, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
   return Topic;
 };

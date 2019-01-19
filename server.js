@@ -23,7 +23,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-Routes
+//Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 app.use(controller)
@@ -37,8 +37,16 @@ if (process.env.NODE_ENV === "test") {
 }
 console.log();
 
+app.get("/createSubject", function(req, res) {
+  controller.createSubject(controller.subjectExample, res);
+});
+
 app.get("/createTopic", function(req, res) {
   controller.createTopic(controller.topicExample, res);
+});
+
+app.get("/createSubtopic", function(req, res) {
+  controller.createSubtopic(controller.subtopicExample, res);
 });
 
 app.get("/createTest", function(req, res) {
@@ -49,8 +57,16 @@ app.get("/createQuestion", function(req, res) {
   controller.createQuestion(controller.questionExample, res);
 });
 
+app.get("/getSubjectsList", function(req, res) {
+  controller.getSubjectsList(req, res);
+});
+
 app.get("/getTopicsList", function(req, res) {
   controller.getTopicsList(req, res);
+});
+
+app.get("/getSubtopicsList", function(req, res) {
+  controller.getSubtopicsList(req, res);
 });
 
 app.get("/getTestsList", function(req, res) {
