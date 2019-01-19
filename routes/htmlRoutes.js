@@ -34,9 +34,4 @@ module.exports = function(app) {
   app.get("/quiz-selection", function(req, res) {
     res.render("quiz-selection");
   });
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
 };

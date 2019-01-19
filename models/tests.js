@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
 
-    Test.belongsTo(models.Topic, {
+    Test.belongsTo(models.Subtopic, {
       foreignKey: {
         allowNull: false
       }
