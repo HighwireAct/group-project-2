@@ -1,28 +1,14 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1 class="game-title">80s Music Trivia</h1>
+        <h1 class="quiz-title">Quiz Name</h1>
         <hr>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-3 text-center">
-        <img id="side-image" src="/images/80s-collage.png" alt="80s collage side image">
-        <div>
-          <h2 id="time-left" class="text-center"></h2>
-        </div>
-      </div>
-
-
-
-      <div class="col-lg-9">
+<div class="col-12">
         <div id="start-page" class="start-page-text text-center">
-          <h2>For those of us that are old enough to remember!</h2>
-          <p>A 2-minute job down memory lane!</p>
-          <img id="notes" src="/images/music-notes.gif" alt="music notes animated gif image">
-          <br>
-          <div class="btn btn-primary" id="start-button">Start
+          <div class="btn btn-primary" id="start-button">Start your Quiz
           </div>
         </div> 
 
@@ -32,17 +18,13 @@
       </div>
 
         <div class="hidden" id="end-page">
-          <h2 id="report-card">Your Report Card:</h2>
+          <h2 id="report-card">Quiz Results:</h2>
             <div class="container">
               <div class="row">
-                <div class="col-md-5">
+                <div id="results" class="col-12">
                   <p id="correct-answers"></p>
                   <p id="incorrect-answers"></p>
-                  <p id="unanswered"></p>
-                  <p id="report-text"></p>
-                </div>
-                <div class="col-md-4">
-                  <div id="report-image"></div>
+                  <p id="review-link"></p>
                 </div>
               </div>
             </div>
@@ -51,7 +33,7 @@
     </div>
   </div>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/quiz.js"></script>
