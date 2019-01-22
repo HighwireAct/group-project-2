@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Question = sequelize.define("Question", {
     question: DataTypes.TEXT,
     answer1: DataTypes.TEXT,
@@ -6,9 +6,12 @@ module.exports = function(sequelize, DataTypes) {
     answer3: DataTypes.TEXT,
     answer4: DataTypes.TEXT,
     correctAnswer: DataTypes.INTEGER
-  });
+  }, {
+      timestamps: false
 
-  Question.associate = function(models) {
+    });
+
+  Question.associate = function (models) {
     Question.belongsTo(models.Test, {
       foreignKey: {
         allowNull: false
