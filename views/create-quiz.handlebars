@@ -1,1 +1,117 @@
 This is the create-quiz page
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ANSR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/quiz-selector">Select a Quiz</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="col-md-12 col-lg-6 dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Choose the subject for your Test
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/tests"></a>
+            <a class="dropdown-item" href="/math/:id">Math</a>
+            <a class="dropdown-item" href="computing/:id">Computing</a>
+
+        </div>
+    </div>
+
+    <div class="row" class="col-md-12 col-lg-6">
+        <a>Insert your first question below</a>
+    </div>
+
+    <div class="input-group flex-nowrap">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">Q</span>
+        </div>
+        <input type="text" class="form-control" placeholder="first question of your quiz" aria-label="Username"
+            aria-describedby="addon-wrapping">
+    </div>
+
+    <div class="row" class="col-md-12 col-lg-6">
+        <a>
+            Here you will enter the answers you want to go along with your Test
+        </a>
+
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="radio" aria-label="Radio button for following text input">
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="radio" aria-label="Radio button for following text input">
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="radio" aria-label="Radio button for following text input">
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="radio" aria-label="Radio button for following text input">
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="radio" aria-label="Radio button for following text input">
+            </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+
+    <div>
+        <a>Do not forget to select the correct answer on the left</a>
+    </div>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-success" disabled>
+                    Insert next Question
+                </button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+        Submit Test
+    </button>
