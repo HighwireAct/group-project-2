@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "dafault",
-    "database": "quiz_seq_db",
+    "password": "Now116116",
+    "database": "quiz_db",
     "host": "localhost",
     "dialect": "mysql"
   },
