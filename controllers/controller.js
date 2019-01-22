@@ -97,5 +97,20 @@ module.exports = {
       console.log(resultArr);
       res.json(resultArr);
     });
+  },
+  findTestWithQuestions: function(req, res, TestId) {
+    db.Test.findAll({
+      where: {
+        id: TestId
+      },
+      include: [
+        {model: db.Question, as: "Questions"},
+        {model: db.Subtopic, as: "Subtopic", include: {
+          model: db.Topic, as: "Topic"
+        }}
+      ]
+    }).then(test => {
+      res.json(test);
+    });
   }
 }
