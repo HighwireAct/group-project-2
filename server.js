@@ -26,7 +26,10 @@ app.set("view engine", "handlebars");
 //Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+<<<<<<< HEAD
 // app.use(controller)
+=======
+>>>>>>> origin
 
 var syncOptions = { force: false };
 
@@ -77,6 +80,11 @@ app.get("/findQuestionsWithTestId/:testid", function(req, res) {
   controller.findQuestionsWithTestId(req, res, req.params.testid);
 });
 
+app.get("/test/:id", function(req, res) {
+  controller.findTestWithQuestions(req, res, req.params.id);
+});
+
+
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
@@ -89,3 +97,5 @@ db.sequelize.sync(syncOptions).then(function() {
 });
 
 module.exports = app;
+
+// console.log(Question);

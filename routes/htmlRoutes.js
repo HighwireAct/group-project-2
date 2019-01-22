@@ -21,17 +21,17 @@ module.exports = function(app) {
   });
 
   // Load create-quiz page
-  app.get("/create-quiz", function(req, res) {
-    res.render("create-quiz");
+  app.get("/create-test", function(req, res) {
+    res.render("create-test");
   });
 
   // Load quiz page
-  app.get("/quiz", function(req, res) {
-    res.render("quiz");
+  app.get("/test", function(req, res) {
+    res.render("test");
   });
 
   // Load quizzes page, still needs function to .findAll or .findMany based on dropdown choice
-  app.get("/quiz-selection", function(req, res) {
-    res.render("quiz-selection");
+  app.get("/test-selection", function(req, res) {
+    res.render("test-selection");
   });
 };
