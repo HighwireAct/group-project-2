@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "dafault",
-    "database": "quiz_seq_db",
+    "database": "quiz_db",
     "host": "localhost",
     "dialect": "mysql"
   },
