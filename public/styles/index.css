@@ -1,0 +1,51 @@
+/* @import url("quiz.css"); */
+
+
+body {
+  background-color: rgb(53,92,125);
+ 
+}
+
+.list-group-item {
+  line-height: 2.5;
+}
+
+.headerStyle {
+  margin-top: 5em;
+  margin-bottom: 10em;
+}
+
+#appName {
+  color: rgb(248,177,149);
+  font-size: 9em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-top: 1%;
+}
+
+#tagline {
+  color: rgb(246,114,128);
+  font-size: 1.5em;
+  font-family: 'Sarabun', sans-serif;
+  text-align: center
+}
+
+#takeQuizBtn {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 1em;
+}
+
+#makeQuizBtn {
+  width: 100%;
+  padding: 1em;
+}
+
+
+
+#takeQuiz {
+  color: blue;
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif 
+}
+

@@ -1,0 +1,37 @@
+body {
+    background-image: url(../images/table.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+}
+
+.dropDownStyle {
+    margin-top: 3em;
+    margin-bottom: 6em;
+}
+
+#dropdownMenuButton {
+    background: rgb(97, 137, 47);
+    border-style: none;
+}
+
+#dropdownMenuButton:hover {
+    background: rgb(76, 108, 37);
+}
+
+
+
+.cardContainerStyle {
+    margin-bottom: 2em;
+}
+
+.card {
+    background: rgba(255, 255, 255, .8);
+}
+
+.card:hover {
+    background: rgb(248,249,250);
+}

@@ -26,10 +26,9 @@ app.set("view engine", "handlebars");
 //Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-<<<<<<< HEAD
+
 // app.use(controller)
-=======
->>>>>>> origin
+
 
 var syncOptions = { force: false };
 

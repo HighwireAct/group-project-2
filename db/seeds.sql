@@ -30,7 +30,7 @@ VALUES
     ("What number comes immediately after 6?", "7", "8", "10", "1", "7", 1),
     ("What number comes immediately after 3?", "3", "9", "7", "4", "4", 1),
     ("What number comes immediately before 5?", "1", "2", "4", "6", "4", 1),
-    ("What number comes immediately before 10?", "8", "2", "3", "9", "9", 1)
+    ("What number comes immediately before 10?", "8", "2", "3", "9", "9", 1),
     ("Select the equation where n = 6 is the solution.", "12 = n + 5", "2n = 14", "3n - 1 = 17", "6 = n + 1", "3n - 1 = 17", 2),
     ("Select the equation where n = 1 is the solution.", "12 = n + 11", "2n = 14", "3n - 1 = 17", "6 = n + 1", "12 = n + 11", 2),
     ("Select the equation where n = 0 is the solution.", "15 = n - 5", "2n = 14", "10 - 2n = 10", "6 = n + 1", "10 - 2n = 10", 2),

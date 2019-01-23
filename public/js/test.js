@@ -66,30 +66,16 @@ var questionBank =
 // information about the state of game play
 var gameState = {
 
-    // set the time at 2 minutes, and count down by 1 second
-    timeRemaining: 120,
+
 
     // start the timer, hide the start-page div, show the questions
     startTimer: function () {
-        $("#time-left").text("Time left: " + gameState.timeRemaining);
-        setInterval(gameState.countdown, 1000);
         $("#start-page").hide();
         triviaPage.displayQuestions();
     },
 
-    // decrement the timer and update the UI; stop the timer at 0
-    countdown: function () {
-        gameState.timeRemaining--;
-        $("#time-left").text("Time left: " + gameState.timeRemaining);
-        if (gameState.timeRemaining === 0) {
-            gameState.stopTimer();
-            $("#time-left").empty();
-        }
-    },
-
     // stop the timer and check the answers
     stopTimer: function () {
-        clearInterval();
         triviaPage.checkAnswers();
     },
 
@@ -97,24 +83,8 @@ var gameState = {
     showEndPage: function (numCorrect, numIncorrect, numUnanswered) {
         $("#end-page").show();
         $("#questions-div").hide();
-        $("#time-left").hide();
         $("#correct-answers").text("Correct answers: " + numCorrect);
         $("#incorrect-answers").text("Incorrect answers: " + numIncorrect);
-        $("#unanswered").text("Questions unanswered: " + numUnanswered);
-
-
-        //if player gets 0-7 correct answers, then show Ferris Bueller Giphy
-
-        if (numCorrect < 8) {
-            $("#report-image").html('<div style="width:100%;height:0;margin-top:32px;padding-bottom:43%;position:relative;"><iframe src="https://giphy.com/embed/SvkeZDlGZm1Xi" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/1986-matthew-broderick-ferris-bueller-SvkeZDlGZm1Xi"></a></p>'),
-                $("#report-text").text("Go back to 80s school BUELLER!")
-        }
-
-        //if player gets 8-10 correct answers, then show Axel Rose Giphy
-        else {
-            $("#report-image").html('<div style="width:100%;height:0;margin-top:32px;padding-bottom:66%;position:relative;"><iframe src="https://giphy.com/embed/C8bxSGK76yffO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/80s-guns-n-roses-axl-rose-C8bxSGK76yffO"></a></p>'),
-                $("#report-text").text("You TOTALLY ROCKED the 80s!")
-        }
     }
 
 }
@@ -127,7 +97,6 @@ var triviaPage = {
     displayQuestions: function () {
         var divContainer = $("#questions-div");
         var answerGroup = $(".form-check");
-        divContainer.append('<h2>Answer as many questions as you can in 2 minutes:</h2>');
 
         for (var i = 0; i < questionBank.length; i++) {
 
@@ -154,7 +123,6 @@ var triviaPage = {
         var userAnswer;
         var numCorrect = 0;
         var numIncorrect = 0;
-        var numUnanswered = 0;
 
         // loop through to compare the text of the label with the user answers
         // update scores to correct, incorrect, or unanswered divs
@@ -164,8 +132,6 @@ var triviaPage = {
 
             if (userAnswer === correctAnswer) {
                 numCorrect++;
-            } else if (userAnswer === "") {
-                numUnanswered++;
             } else if (userAnswer !== correctAnswer) {
                 {
                     numIncorrect++;
