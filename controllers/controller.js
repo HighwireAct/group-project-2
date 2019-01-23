@@ -98,10 +98,10 @@ module.exports = {
       res.json(resultArr);
     });
   },
-  findTestWithQuestions: function(req, res, TestId) {
+  findTestWithQuestions: function(req, res, callback) {
     db.Test.findAll({
       where: {
-        id: TestId
+        id: req.param.id
       },
       include: [
         {model: db.Question, as: "Questions"},
@@ -110,7 +110,7 @@ module.exports = {
         }}
       ]
     }).then(test => {
-      res.json(test);
+      callback(test);
     });
   }
 }
