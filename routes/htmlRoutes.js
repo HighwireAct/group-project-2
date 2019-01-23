@@ -21,20 +21,25 @@ module.exports = function (app) {
   });
 
   // Load create-quiz page
-  app.get("/create-quiz", function(req, res) {
-    res.render("create-test");
+  app.get("/create-test", function(req, res) {
+    res.render("create-test", {
+      style: "create-test.css"
+    });
   });
 
   // Load quiz page
-  app.get("/quiz/:id", function(req, res) {
-    res.render("test");
+  app.get("/test/:id", function(req, res) {
+    res.render("test", {
+      style: "test.css"
+    });
   });
 
   // Load quizzes page, still needs function to .findAll or .findMany based on dropdown choice
-  app.get("/quiz-selection/", function(req, res) {
+  app.get("/test-selection/", function(req, res) {
     controller.findAllTests(function(tests) {
       console.dir(tests);
-      res.render("quiz-selection", {
+      res.render("test-selection", {
+        style: "test-selection.css",
         tests: tests
       });
     });

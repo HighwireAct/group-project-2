@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="/create-quiz">Make a Test</a>
+        <a class="nav-link" href="/create-test">Make a Test</a>
       </li>
     </ul>
   </div>
@@ -17,63 +17,35 @@
 
 <!-- Container for dropdown menu AND test cards -->
 <div class="container">
-<div class="row">
-<div id="choiceContainer" class="container">
-         <div class="row">
-           <div class="col-md-12 col-lg-6 dropdown">
-             <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Choose a Test Category
-             </a>
-             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-               <ul class="drop-subjects">
-                 <li class="quiz-subject"><a class="dropdown-item" href="/tests">ALL SUBJECTS</a></li>
-                 <li class="quiz-subject"><a class="dropdown-item" href="/math/">MATH</a></li>
-                 <li class="quiz-subject"><a class="dropdown-item" href="/computing/">COMPUTING</a></li>
-               </ul>
-             </div>
-           </div>
-</div>
-    
-  <div class="row">
-    {{#each test}}
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      
-<div class="card" style="width: 100%;">
-  <div class="card-body">
-    <h5 class="card-title">Counting to 10</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Math</h6>
-    <p class="card-text">An early math test to help build your fundamental counting skills from 1 to 10!</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-    </div>
-    {{/each}}
 
-    <div class="col-sm-12 col-md-6 col-lg-4">
-<div class="card" style="width: 100%;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+  <!-- Dropdown menu -->
+  <div class="row dropDownStyle">
+    <div class="col-md-12 col-lg-6 dropdown">
+      <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Select Subject
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Math</a>
+        <a class="dropdown-item" href="#">Computing</a>
+      </div>
+    </div>
   </div>
 
   <!-- Quiz cards -->
   <div class="row">
+    {{#each tests}}
     <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
 
       <!-- Card example -->
       <div class="card" style="width: 100%;">
         <div class="card-body">
           <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
+          <h5 class="text-uppercase">{{this.Subtopic.Topic.Subject.subject}}</h5>
           <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{this.Subtopic.Topic.topic}}</h6>
           <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
+          <h4 class="card-title"><a href="/quiz/{{this.id}}" class="card-link">{{this.testname}}</a></h4>
 
           <div>
             <!-- Number of questions -->
@@ -90,217 +62,7 @@
       </div>
 
     </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <!-- Card example -->
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 cardContainerStyle">
-
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <!-- Subject name from Khan Academy -->
-          <h5 class="text-uppercase">Math</h5>
-          <!-- Topic name from Khan Academy -->
-          <h6 class="card-subtitle mb-2 text-muted">Trigonometry</h6>
-          <!-- Quiz name -->
-          <h4 class="card-title"><a href="#" class="card-link">Sine and Cosine</a></h4>
-
-          <div>
-            <!-- Number of questions -->
-            <div class="d-inline-block float-left">
-              <div class="text-uppercase text-muted small">10 Questions</div>
-            </div>
-            <!-- Quiz completion percentage -->
-            <div class="d-inline-block float-right">
-              <div class="text-uppercase text-muted small">80%</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-    
+    {{/each}}
     
 
   </div>
