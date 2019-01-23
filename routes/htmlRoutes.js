@@ -1,23 +1,22 @@
 var db = require("../models");
 var controller = require("../controllers/controller.js");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+  app.get("/", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
+        style: "index.css",
         msg: "ANSR",
         examples: dbExamples
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+  // Load create-test page
+  app.get("/create-test", function (req, res) {
+    res.render("create-test", {
+      style: "create-test.css"
     });
   });
 
@@ -38,6 +37,11 @@ module.exports = function(app) {
       res.render("quiz-selection", {
         tests: tests
       });
+      
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404", {
+      style: "404.css"
     });
   });
 };

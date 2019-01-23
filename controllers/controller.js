@@ -101,7 +101,7 @@ module.exports = {
   findTest: function(TestId, callback) {
     db.Test.findAll({
       where: {
-        id: TestId
+        id: req.param.id
       },
       include: [
         {model: db.Subtopic, as: "Subtopic", include: {
