@@ -27,7 +27,7 @@ module.exports = function(app) {
   });
 
   // Load quiz page
-  app.get("/quiz", function(req, res) {
+  app.get("/quiz/:id", function(req, res) {
     res.render("test");
   });
 
