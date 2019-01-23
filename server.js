@@ -1,6 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var bodyParser = require("body-parser");
 
 var db = require("./models");
 var controller = require("./controllers/controller.js");
@@ -26,10 +27,6 @@ app.set("view engine", "handlebars");
 //Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-<<<<<<< HEAD
-// app.use(controller)
-=======
->>>>>>> origin
 
 var syncOptions = { force: false };
 
@@ -80,7 +77,7 @@ app.get("/findQuestionsWithTestId/:testid", function(req, res) {
   controller.findQuestionsWithTestId(req, res, req.params.testid);
 });
 
-app.get("/test/:id", function(req, res) {
+app.get("/quiz/:id", function(req, res) {
   controller.findTestWithQuestions(req, res, req.params.id);
 });
 

@@ -1,4 +1,5 @@
 var db = require("../models");
+var controller = require("../controllers/controller.js");
 
 module.exports = function(app) {
   // Load index page
@@ -21,17 +22,22 @@ module.exports = function(app) {
   });
 
   // Load create-quiz page
-  app.get("/create-test", function(req, res) {
+  app.get("/create-quiz", function(req, res) {
     res.render("create-test");
   });
 
   // Load quiz page
-  app.get("/test", function(req, res) {
+  app.get("/quiz", function(req, res) {
     res.render("test");
   });
 
   // Load quizzes page, still needs function to .findAll or .findMany based on dropdown choice
-  app.get("/test-selection", function(req, res) {
-    res.render("test-selection");
+  app.get("/quiz-selection/", function(req, res) {
+    controller.findAllTests(function(tests) {
+      console.dir(tests);
+      res.render("quiz-selection", {
+        tests: tests
+      });
+    });
   });
 };

@@ -98,19 +98,36 @@ module.exports = {
       res.json(resultArr);
     });
   },
-  findTestWithQuestions: function(req, res, TestId) {
+  findTest: function(TestId, callback) {
     db.Test.findAll({
       where: {
         id: TestId
       },
       include: [
-        {model: db.Question, as: "Questions"},
         {model: db.Subtopic, as: "Subtopic", include: {
           model: db.Topic, as: "Topic"
         }}
       ]
     }).then(test => {
-      res.json(test);
+      callback(test);
     });
+  },
+  findAllTests: function(callback) {
+    db.Test.findAll({
+      include: [
+        {
+          model: db.Subtopic,
+          include: {
+            model: db.Topic,
+            include: {
+              model: db.Subject
+            }
+          }
+        }
+      ]
+    }).then(tests => {
+      callback(tests);
+    })
   }
+
 }
