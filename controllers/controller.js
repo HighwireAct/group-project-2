@@ -83,7 +83,7 @@ module.exports = {
       res.json(resultArr);
     }); 
   },
-  findQuestionsWithTestId: function(req, res, TestId){
+  findQuestionsWithTestId: function(TestId, callback){
     db.Question.findAll({
       where: {
         TestId: TestId
@@ -94,8 +94,7 @@ module.exports = {
       result.forEach((item) => {
         resultArr.push(item.dataValues)
       })
-      console.log(resultArr);
-      res.json(resultArr);
+      callback(resultArr);
     });
   },
   findTest: function(TestId, callback) {
@@ -127,6 +126,15 @@ module.exports = {
       ]
     }).then(tests => {
       callback(tests);
+    })
+  },
+  findTestQuestions(TestId, callback) {
+    db.Questions.findAll({
+      where: {
+        TestId: TestId
+      }
+    }).then(questions => {
+      callback(questions);
     })
   }
 
