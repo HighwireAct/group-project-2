@@ -1,5 +1,6 @@
 var db = require("../models");
 var controller = require("../controllers/controller.js");
+var fs = require("fs");
 
 module.exports = function (app) {
   // Load index page
@@ -27,7 +28,27 @@ module.exports = function (app) {
 
   // Load quiz page
   app.get("/quiz/:id", function(req, res) {
-    res.render("test");
+    let questionBank = [];
+    controller.findQuestionsWithTestId(req.params.id, function(questions) {
+      for (let i = 0; i < questions.length; i++) {
+        let question = {
+          question: questions[i].question,
+          choices: [
+            questions[i].answer1,
+            questions[i].answer2,
+            questions[i].answer3,
+            questions[i].answer4
+          ],
+          correct: questions[i][`answer${questions[i].correctAnswer}`]
+        }
+        questionBank.push(question);
+      }
+      console.dir(questionBank);
+      // fs.writeFileSync("questionBank.json", JSON.stringify(questionBank, null, 2), 'utf-8');
+      res.render("test", {
+        questionBank: JSON.stringify(questionBank)
+      });
+    });
   });
 
   // Load quizzes page, still needs function to .findAll or .findMany based on dropdown choice
