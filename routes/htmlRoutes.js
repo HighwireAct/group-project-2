@@ -33,6 +33,8 @@ module.exports = function (app) {
     let questionBank = [];
     controller.findQuestionsWithTestId(req.params.id, function(questions) {
       for (let i = 0; i < questions.length; i++) {
+        console.dir(questions[i].correctAnswer);
+        questions[i][`answer${questions[i].correctAnswer}`]
         let question = {
           question: questions[i].question,
           choices: [
@@ -41,7 +43,7 @@ module.exports = function (app) {
             questions[i].answer3,
             questions[i].answer4
           ],
-          correct: questions[i][`answer${questions[i].correctAnswer}`]
+          correct: questions[i].correctAnswer
         }
         questionBank.push(question);
       }

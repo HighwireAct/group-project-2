@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Now116116",
+    "password": "Pipandpop1",
     "database": "quiz_db",
     "host": "localhost",
     "dialect": "mysql"
