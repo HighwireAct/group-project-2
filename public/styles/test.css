@@ -39,6 +39,8 @@ hr {
   
   #end-page {
     display: none;
+    text-align: center;
+    margin-top: 10%;
   }
   
   
@@ -92,16 +94,12 @@ hr {
   }
 
   #report-card {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
     color: white; 
   }
 
-  #report-text {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1em;
+  #return {
+    font-family: 'Sarabun', sans-serif;
   }
 
-#side-image {
-  width: 75%;
-  margin-bottom: 5%;
-}
