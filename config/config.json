@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "Now116116",
-    "database": "quiz_db",
-    "host": "localhost",
+    "username": "j4eauqama5yckvsz",
+    "password": "ak7qfhw5nrbfmqv8",
+    "database": "mva1r36bowypivb0",
+    "host": "gx97kbnhgjzh3efb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
