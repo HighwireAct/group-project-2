@@ -1,3 +1,19 @@
 .jumbotron {
+    background-image: url("/images/atl_skyline.png");
+    background-repeat: none;
+    background-size: cover;
     background-color: lightblue;
 }
+
+a {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 2em;
+    color: black;
+}
+
+#msg404 {
+    color: white;
+    font-size: 5em;
+    font-family: 'Montserrat', sans-serif;
+}
+

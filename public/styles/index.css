@@ -6,13 +6,18 @@ body {
  
 }
 
+#logo-tag img {
+  display: block;
+  margin: 0 auto;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
 
 .headerStyle {
   margin-top: 5em;
-  margin-bottom: 10em;
+  margin-bottom: 8em;
 }
 
 #appName {
@@ -34,11 +39,13 @@ body {
   width: 100%;
   margin-bottom: 30px;
   padding: 1em;
+  font-family: 'Sarabun', sans-serif;
 }
 
 #makeQuizBtn {
   width: 100%;
   padding: 1em;
+  font-family: 'Sarabun', sans-serif;
 }
 
 
